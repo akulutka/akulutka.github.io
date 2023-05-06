@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        svg: {
+          fontCache: 'global'
+        }
+      };
+    </script>
+    <script type="text/javascript" id="MathJax-script" async
+      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+    </script>
+    <script src="assets/js/json-sans-eval.js"></script>
+    <script src="assets/js/css-browser-selector.js"></script>
+    <script src="assets/js/stats.min.js"></script>
+    <script src="assets/js/game-of-life-v3.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css"/>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8"/>
+    <style>
+      body {
+      background-color: #0f111a
+      }
+      a, a:active, a:visited {
+      color: white;
+      }
+      a:hover{
+      background-color:#ffffff;
+      color: #000000;
+      }
+    </style>
+    <title>Serezha Rakhmanov</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <div id="main_div">
+      Serezha Rakhmanov
+      <br>
+      <small style="font-size:16px">akulutka [at] hotmail [dot] com</small>
+      <br>
+    <hr>
+    <a href="cv.pdf">CV</a>
+    <hr>
+    <a href="https://github.com/akulutka">GitHub</a>
+    <hr>
+    <small style="font-size:16px">Hint: press R to Run, S to Step, C to Clear</small>
+  </div>
+    <div id="wrapper">
+      <div class="box">
+        <div class="subtitle"></div>
+        <p class="info"><abbr title="Current Generation"></abbr><span id="generation"></span><span id="livecells"></span><span id="steptime"></span></p>
+        <span id="hint"></span>
+      </div>
+      <div class="box controls">
+        <div class="subtitle"></div>
+        <form action="">
+          <input type="hidden" value="Run" id="buttonRun" title="Key: R" />
+          <input type="hidden" value="Step" id="buttonStep" title="Key: S" />
+          <input type="hidden" value="Clear" id="buttonClear" title="Key: C" />
+          <input type="hidden" value="Export" id="buttonExport" />
+        </form>
+      </div>
+
+      <div class="box layout">
+        <form>
+         <input type="hidden" id="buttonTrail" value="Trail"/>
+         <input type="hidden" id="buttonGrid" value="Grid" />
+         <input type="hidden" id="buttonColors" value="Colors" />
+         <span id="layoutMessages"></span>
+        </form>
+      </div>
+    </div>
+      <script type="text/javascript">
+        var cnv = document.getElementById("canvas");
+        var render = cnv.getContext("2d");
+        cnv.style.left = "0px";
+        cnv.style.top = "0px";
+        cnv.style.position = "absolute";
+      </script>
+  </body>
+</html>
